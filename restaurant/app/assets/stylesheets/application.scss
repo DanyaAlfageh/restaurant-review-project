@@ -11,3 +11,42 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
+.nav-bar {
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+  }
+
+.header{
+    padding: 1rem;
+    background-color: gray;
+    color: white;
+}
+.contentWrap {
+    padding: 2em;
+    background-color: #ededed;
+  }
+.content {
+    width: 650px;
+    margin: 0 auto;
+    min-height: 1250px;
+    line-height: 1.5em;
+  }
+.leave-space {
+    padding: 2em;
+    border-bottom: 2px solid black;
+}
+
+@media (max-width: 500px) {
+  .header{
+    padding: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .nav-bar{
+    padding: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+}
