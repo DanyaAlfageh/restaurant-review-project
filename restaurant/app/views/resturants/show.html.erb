@@ -1,2 +1,44 @@
-<h1>Resturants#show</h1>
-<p>Find me in app/views/resturants/show.html.erb</p>
+<div class='container'>
+    <div class='row'>
+        <div class='boxy col-md-8'>
+        <br>
+            <%= link_to 'Back', resturants_path%><br><br>
+            <h2>
+              <%= @resturant.name %>
+            </h2>
+            <br>
+            <br>
+            <br>
+            <h4>Reviews</h4>
+
+            <% if @resturant.reviews.blank? %>
+            <h3>No reviews just yet, would you like to add the first!</h3>
+            <%= link_to "Write Review", new_resturant_review_path(@resturant), class: "btn btn-danger" %>
+            <% else %>
+                <% @resturant.reviews.each do |review| %>
+                <br>
+                <p>
+                    <strong>Title:</strong>
+                    <%= review.title %>
+                </p>
+                
+                <p>
+                    <strong>Body:</strong>
+                    <%= review.body %>
+                </p>
+                    <%= review.user.email %>
+                </p>
+                <% if current_user == review.user %>
+                <%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete %>
+                <% end %><br><br>
+            <% end %>
+                <br>
+                <%= link_to "Add Review", new_resturant_review_path(@resturant), class: "btn btn-secondary" %>
+                <br>
+            <% end %>
+            <br>
+            <br>
+            <br><br>
+        </div>
+    </div>
+</div>

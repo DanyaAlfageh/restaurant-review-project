@@ -1,1 +1,17 @@
-<h1>Hello Papi</h2>
+<div class='container'>
+    <div class='row'>
+        <div class='boxy col-md-8'>
+        <br>
+            <% @resturants.each do |resturant| %>
+            <h2>
+                <%= resturant.name %></h2>
+                <p><%= link_to 'Show', resturant %>
+            </p>
+            <br>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+
