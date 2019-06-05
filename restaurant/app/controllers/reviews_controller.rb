@@ -28,10 +28,11 @@ class ReviewsController < ApplicationController
   end
 
   def update
-      if @review.update(review_params)
-         redirect_to @review 
+      @review.update(review_params)
+      if @review.save
+        redirect_to @resturant
       else
-         render :edit
+        render :new
       end
   end
   

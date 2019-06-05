@@ -1,0 +1,21 @@
+<div class='container contentWrap content'>
+<%= form_for([@resturant, @review]) do |form| %>
+  <div class="field">
+    <div>
+    <%= form.label :title %>
+    </div>
+    <%= form.text_field :title %>
+  </div>
+  <br>
+  <div class="field">
+    <div>
+    <%= form.label :body %>
+    </div>
+    <%= form.text_area :body %>
+  </div>
+<br><br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
