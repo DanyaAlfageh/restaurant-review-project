@@ -1,7 +1,7 @@
 class ResturantsController < ApplicationController
   before_action :set_resturant, only: [:show]
   def index
-    @resturants = Resturant.all
+    @resturants = Resturant.order(created_at: :asc).page(params[:page]).per(5)
   end
   def show
   end
@@ -15,4 +15,5 @@ class ResturantsController < ApplicationController
   def resturant_params
     params.require(:resturant).permit(:name)
   end
+
 end

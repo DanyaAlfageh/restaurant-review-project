@@ -13,7 +13,7 @@
 
   <body class="<%=controller_name%> <%=action_name%>">
   <header class='header'>
-  <h1>Logo</h1>
+  <%= link_to 'Food Guide', resturants_path%>
   </header>
   
   <nav class='nav-bar'>
@@ -22,13 +22,13 @@
   <% if user_signed_in? %>
 
   <h2>Welcome <%= current_user.email %></h2>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-  <%= link_to 'Change Password', edit_user_registration_path %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class =>"white" %>  |  
+  <%= link_to 'Change Password', edit_user_registration_path, :class =>"white" %>
 
   <% else %>
 
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to "Sign Up", new_user_registration_path, :class =>"white" %>  
+  <%= link_to "Sign In", new_user_session_path, :class =>"white" %>
 
   <% end %>
   </nav>

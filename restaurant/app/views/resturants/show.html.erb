@@ -1,6 +1,6 @@
-<div class='container'>
+<div class='container-fluid'>
     <div class='row'>
-        <div class='boxy col-md-8'>
+        <div class='col-md-8'>
         <br>
             <%= link_to 'Back', resturants_path%><br><br>
             <h2>
@@ -10,38 +10,39 @@
             <br><hr>
             <br>
             <h4>Reviews</h4>
-
-            <% if @resturant.reviews.blank? %>
-            <h3>No reviews just yet, would you like to add the first!</h3>
-            <%= link_to "Write Review", new_resturant_review_path(@resturant), class: "btn btn-danger" %>
-            <% else %>
-                <% @resturant.reviews.each do |review| %>
-                <br>
-                <p>
-                    <strong>Title:</strong>
-                    <%= review.title %>
-                </p>
-                
-                <p>
-                    <strong>Body:</strong>
-                    <%= review.body %>
-                </p>
-                    <%= review.user.email %>
-                </p>
-                
-                <% if current_user == review.user %>
-                <%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete %> |
-                <%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review)%>
-                <% end %><br><br><hr>
-            <% end %>
-                <br>
-                <%= link_to "Add Review", new_resturant_review_path(@resturant), class: "btn btn-secondary" %>
-                <br>
-            <% end %>
-            <br>
-            <br>
-            <br><br>
+            <div class="scroll">
+                    <% if @resturant.reviews.blank? %>
+                    <h3>No reviews just yet, would you like to add the first!</h3>
+                    <%= link_to "Write Review", new_resturant_review_path(@resturant), class: "btn btn-danger" %>
+                    <% else %>
+                        <% @resturant.reviews.each do |review| %>
+                        <br>
+                        <p>
+                            <strong>Title:</strong>
+                            <%= review.title %>
+                        </p>
+                        
+                        <p>
+                            <strong>Body:</strong>
+                            <%= review.body %>
+                        </p>
+                            <%= review.user.email %>
+                        </p>
+                        
+                        <% if current_user == review.user %>
+                        <span class="badge badge-secondary"><%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete, :class =>"white"%></span> |
+                        <span class="badge badge-secondary"><%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review), :class =>"white"%></span>
+                        <% end %><br><br><hr>
+                    <% end %>
+                        <br>
+                        <%= link_to "Add Review", new_resturant_review_path(@resturant), class: "btn btn-secondary" %>
+                        <br>
+                    <% end %>
+                    <br>
+                    <br>
+                    <br><br>
+            </div>
+            <br><br><br><br>
         </div>
-       
     </div>
 </div>
