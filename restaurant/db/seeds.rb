@@ -9,7 +9,8 @@
 5.times do 
     
     Resturant.create(
-        name: Faker::Restaurant.name
+        name: Faker::Restaurant.name,
+        description: Faker::Restaurant.description
     )
 
 end
