@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
   resources :resturants, only: [:index, :show] do
     resources :reviews, except: [:index, :show] 
+    # resources :images, [:index, :show]
+  end
+
+  resources :resturants, only: [:index, :show] do
+    resources :images, except: [:index, :show] 
+    # resources :images, [:index, :show]
   end
   
 end

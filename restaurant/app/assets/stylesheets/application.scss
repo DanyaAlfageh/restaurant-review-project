@@ -73,6 +73,35 @@ header a, header a:hover{
   text-decoration: none;
 }
 
+.imagesize{
+  border-radius: 55px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+.separate{
+  padding-left: 70px;
+}
+
+.form-upload{
+  border: 1px solid #dbdbdb;
+  height: auto;
+  margin: auto 160px;
+  padding: 30px;
+  border-radius: 3px;
+
+  input[type='text']{
+    width: 100%;
+  }
+}
+
+.contentUpload {
+  padding: 2em;
+  width: 450px;
+  margin: 0 auto;
+  min-height: 250px;
+  line-height: 1.5em;
+}
 // @media (max-width: 500px) {
 //   .header{
 //     padding: 100%;

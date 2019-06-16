@@ -1,13 +1,13 @@
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-md-8'>
+        <div class='col-md-7'>
+        <br>
             <%= link_to 'Back', resturants_path%><br><br>
             <h2>
               <%= @resturant.name %>
             </h2>
             <br>
-            <p>
-              <%= @resturant.description %>
+            <p><%= @resturant.description %>
             </p>
             <br><hr>
             <br>
@@ -43,6 +43,16 @@
                 <br>
                 <br>
             <br><br>
+        </div>
+        <div class='col-md-5'>
+        <div class='separate'>
+        <br><br><br>
+        <h2>Images</h2><br>
+        <% @resturant.images.each do |i| %>
+            <%= image_tag i.image , class: 'imagesize'%>
+        <% end %><br><br>
+            <%= link_to "Add Image", new_resturant_image_path(@resturant), class: "btn btn-secondary" %>
+            </div>
         </div>
     </div>
 </div>

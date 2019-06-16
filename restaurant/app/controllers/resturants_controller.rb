@@ -5,7 +5,7 @@ class ResturantsController < ApplicationController
   end
   def show
   end
-
+  
   private
   
   def set_resturant

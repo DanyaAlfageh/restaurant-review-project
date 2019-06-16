@@ -1,0 +1,22 @@
+<div class="form-upload contentUpload">
+<div class="form-group">
+<%= link_to 'Back', resturant_path(@resturant)%><br>
+</div><br>
+<%= form_with(model: [ @resturant, @resturant.images.build ], local: true) do |f| %>
+    <div class="form-group">
+      <%= f.text_field :description %>
+    </div><br>
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div><br>
+    <div class="form-group">
+      <%= f.text_field :user_id, value: current_user.id, class:'d-none'%>
+    </div>
+    <br>
+    <div class="text-center">
+      <%= f.submit 'Add Image', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+<br><br>
+
