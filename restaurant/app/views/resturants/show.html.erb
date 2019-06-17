@@ -1,19 +1,16 @@
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-md-7'>
-        <br>
+        <div class='col-md-7'><br>
             <%= link_to 'Back', resturants_path%><br><br>
             <h2>
               <%= @resturant.name %>
             </h2>
             <br>
             <p><%= @resturant.description %>
-            </p>
-            <br><hr>
-            <br>
-            <h4>Reviews</h4>
-                    <% if @resturant.reviews.blank? %>
-                    <h3>No reviews just yet, would you like to add the first!</h3>
+            </p><br><hr><br><br>
+            <h4>Reviews</h4><br>
+                <% if @resturant.reviews.blank? %>
+                    <h3>No reviews just yet, would you like to add the first!</h3><br>
                     <%= link_to "Write Review", new_resturant_review_path(@resturant), class: "btn btn-danger" %>
                     <% else %>
                     <div class="scroll">
@@ -28,33 +25,45 @@
                             <strong>Body:</strong>
                             <%= review.body %>
                         </p>
-                            <%= review.user.email %>
+                            <%= review.user.email.partition('@').first %>
                         </p>
                         
                         <% if current_user == review.user %>
-                        <span class="badge badge-secondary"><%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete, :class =>"white"%></span> |
-                        <span class="badge badge-secondary"><%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review), :class =>"white"%></span>
+                            <span class="badge badge-secondary"><%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete, :class =>"white"%></span> |
+                            <span class="badge badge-secondary"><%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review), :class =>"white"%></span>
                         <% end %><br><br><hr>
                     <% end %></div><br> <br>
                         <br>
                         <%= link_to "Add Review", new_resturant_review_path(@resturant), class: "btn btn-secondary" %>
                         <br>
-                    <% end %>
-                <br>
-                <br>
-            <br><br>
+                <% end %><br><br><br><br>
         </div>
         <div class='col-md-5'>
-        <div class='separate'>
-        <br><br><br>
-        <h2>Images</h2><br>
-        <div class="scroll-image">
-        <% @resturant.images.each do |i| %>
-            <%= image_tag i.image , class: 'imagesize'%>
-        <% end %><br><br>
-        </div>
-            <%= link_to "Add Image", new_resturant_image_path(@resturant), class: "btn btn-secondary" %>
+            <div class='separate'><br><br><br>
+                <h2>Images</h2><br>
+                <% if @resturant.images.blank? %>
+                <div class="image-box">
+                    <div class="grey-box"></div>
+                    <%= link_to "Add Image", new_resturant_image_path(@resturant), class: "text btn btn-danger" %>
+                </div><br>
+            <% else %>
+                <div class="scroll-image">
+                    <% @resturant.images.each do |i| %>
+                        <div class="image-box">
+                            <%= image_tag i.image , class: 'imagesize'%>
+                            <% if current_user == i.user %>
+                                <span class="text btn btn-danger"><%= link_to 'Delete', resturant_image_path(i.resturant, i), method: :delete, :class =>"white"%></span>
+                            <% else %>
+                                <span class="text btn btn-secondary">
+                                <%= i.user.email.partition('@').first %>
+                                </span>
+                            <% end %>
+                        </div>
+                    <% end %><br><br>
+                </div>
+                <%= link_to "Add Image", new_resturant_image_path(@resturant), class: "btn btn-secondary" %>
             </div>
+            <% end %>
         </div>
     </div>
 </div>

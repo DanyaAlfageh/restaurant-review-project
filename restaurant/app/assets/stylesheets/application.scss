@@ -73,12 +73,49 @@ header a, header a:hover{
   text-decoration: none;
 }
 
-.imagesize{
+.image-box {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+
+
+.image-box .imagesize{
   border-radius: 55px;
   width: 200px;
   height: 200px;
   padding: 10px;
 }
+
+.text {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding: 0;
+}
+
+.image-box:hover  .imagesize{
+  opacity: 0.3;
+}
+
+.image-box:hover .text {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
 .separate{
   padding-left: 70px;
 }
@@ -106,6 +143,14 @@ header a, header a:hover{
 .scroll-image{
   height:600px;
   overflow-y: scroll;
+}
+
+.grey-box{
+  background-color: grey;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 55px;
 }
 
 // @media (max-width: 500px) {
