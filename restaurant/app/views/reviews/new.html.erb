@@ -1,4 +1,38 @@
-<div class='container contentWrap content'>
-<h1>New Review</h1>
-
-<%= render 'form', review: @review, resturant:  @resturant %>
+<div class='container-fluid'>
+    <div class='row paddingleft'>
+        <div class='col-md-6'>
+        <%= link_to 'Back', resturant_path(@resturant) %><br><br>
+            <h1>New Review</h1><br>
+            <%= form_with(model: [ @resturant, @resturant.reviews.build ], local: true) do |form| %>
+            <% if @review.errors.any? %>
+                <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@review.errors.count, "error") %> prohibited
+                    this review from being saved:
+                </h2>
+                <ul>
+                    <% @review.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                    <% end %>
+                </ul>
+                </div>
+            <% end %>
+            <br>
+            <div class="field">
+                <%= form.label :title %><br>
+                <%= form.text_field :title %>
+            </div>
+            <br>
+            <div class="field">
+                <%= form.label :body %><br>
+                <%= form.text_area :body %>
+            </div>
+            <br><br>
+            <div class="actions">
+                <%= form.submit %>
+            </div>
+        <% end %>
+        <br>
+        </div>
+    </div>
+</div>

@@ -24,9 +24,13 @@
     background-color: gray;
     color: white;
 }
+
+.paddingleft{
+  padding: 2em;
+}
 .contentWrap {
     padding: 2em;
-    background-color: #ededed;
+    border: 2px solid black;
   }
 .content {
     width: 650px;
@@ -158,6 +162,10 @@ header a, header a:hover{
   color: #D8000C;
   background-color: #FFBABA;
   padding: 10px;
+}
+
+#error_explanation h2,ul,li{
+  padding-right: 20px;
 }
 
 // @media (max-width: 500px) {
