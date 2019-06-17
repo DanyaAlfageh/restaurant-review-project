@@ -153,6 +153,13 @@ header a, header a:hover{
   border-radius: 55px;
 }
 
+#error_explanation{
+  font-size: 10px;
+  color: #D8000C;
+  background-color: #FFBABA;
+  padding: 10px;
+}
+
 // @media (max-width: 500px) {
 //   .header{
 //     padding: 100%;

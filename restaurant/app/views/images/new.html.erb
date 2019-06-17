@@ -3,10 +3,8 @@
 <%= link_to 'Back', resturant_path(@resturant)%><br>
 </div><br>
 <%= form_with(model: [ @resturant, @resturant.images.build ], local: true) do |f| %>
-    <div class="form-group">
-      <%= f.text_field :description %>
-    </div><br>
-    <div class="form-group">
+  <br> 
+  <div class="form-group">
       <%= f.file_field :image %>
     </div><br>
     <div class="form-group">
