@@ -28,7 +28,7 @@
                             <%= review.user.email.partition('@').first %>
                         </p>
                         
-                        <% if current_user == review.user %>
+                        <% if current_user == review.user%>
                             <span class="badge badge-secondary"><%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete, :class =>"white"%></span> |
                             <span class="badge badge-secondary"><%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review), :class =>"white"%></span>
                         <% end %><br><br><hr>
