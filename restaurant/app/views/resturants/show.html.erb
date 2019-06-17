@@ -48,9 +48,11 @@
         <div class='separate'>
         <br><br><br>
         <h2>Images</h2><br>
+        <div class="scroll-image">
         <% @resturant.images.each do |i| %>
             <%= image_tag i.image , class: 'imagesize'%>
         <% end %><br><br>
+        </div>
             <%= link_to "Add Image", new_resturant_image_path(@resturant), class: "btn btn-secondary" %>
             </div>
         </div>

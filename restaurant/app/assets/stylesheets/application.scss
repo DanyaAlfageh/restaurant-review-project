@@ -102,6 +102,12 @@ header a, header a:hover{
   min-height: 250px;
   line-height: 1.5em;
 }
+
+.scroll-image{
+  height:600px;
+  overflow-y: scroll;
+}
+
 // @media (max-width: 500px) {
 //   .header{
 //     padding: 100%;
