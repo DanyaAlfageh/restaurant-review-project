@@ -79,6 +79,3 @@ gem 'kaminari'
 
 # Store files on Amazon S3.
 gem 'aws-sdk-s3', require: false 
-
-#To push secrets to Heroku in Rails
-gem 'heroku_secrets', git: 'https://github.com/alexpeattie/heroku_secrets.git'
