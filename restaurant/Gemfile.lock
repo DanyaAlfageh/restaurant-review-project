@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/alexpeattie/heroku_secrets.git
+  revision: 717af8e0acf399bc88d2c8c1a7e230023942af0f
+  specs:
+    heroku_secrets (0.0.2)
+
+GIT
   remote: https://github.com/stympy/faker.git
   revision: 14617c4ef7b89998e98e833ad5d11760e03d9bad
   branch: master
@@ -295,6 +301,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   faker!
+  heroku_secrets!
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
