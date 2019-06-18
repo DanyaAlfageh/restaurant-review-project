@@ -2,7 +2,7 @@
     <div class='row paddingleft'>
         <div class='col-md-6'>
         <%= link_to 'Back', resturant_path(@resturant) %><br><br>
-                <h1>Editing Review</h1><br>
+                <h1>Editing Review of <%= @resturant.name %> </h1><br>
                 <%= form_for([@resturant, @review]) do |form| %>
                 <% if @review.errors.any? %>
                     <div id="error_explanation">

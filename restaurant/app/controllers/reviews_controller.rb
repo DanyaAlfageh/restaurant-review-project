@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_resturant
-    before_action :set_review, only: [:show, :edit, :update, :destroy]
-    
+    before_action :set_review, only: [:show, :edit, :update]
+    before_action :set_review_dest, only: [:destroy]
   def index
     @reviews = current_user.reviews
   end
@@ -45,6 +45,14 @@ class ReviewsController < ApplicationController
   
     def set_review
       @review = current_user.reviews.find(params[:id])
+    end
+
+    def set_review_dest
+      if(current_user.admin?)
+        @review = Review.find(params[:id])
+      else
+        @review = current_user.reviews.find(params[:id])
+      end
     end
 
     def set_resturant

@@ -1,7 +1,8 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resturant
-  before_action :set_image, only: [:show, :destroy]
+  before_action :set_image, only: [:show]
+  before_action :set_image_dest, only: [:destroy]
   def index
     @images = Image.all
   end
@@ -29,6 +30,14 @@ class ImagesController < ApplicationController
   private
   def set_image
     @image = current_user.images.find(params[:id])
+  end
+
+  def set_image_dest
+    if(current_user.admin?)
+      @image = Image.find(params[:id])
+    else
+      @image = current_user.images.find(params[:id])
+    end
   end
 
   def set_resturant
