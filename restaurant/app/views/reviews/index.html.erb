@@ -1,8 +1,15 @@
-<h1>Reviews</h1>
-
-    <% @reviews.each do |review| %>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-lg-11'>
+      <h1>Reviews</h1>
+      <% @reviews.each do |review| %>
         <table>
         <tbody>
+        <tr>
+        <td><h2>
+        <%= review.resturant.name %></h2>
+        </td>
+        </tr>
         <tr>
         <td><h4><%= review.title %></h4></td>
         </tr>
@@ -11,15 +18,13 @@
         </tr>
         <tr>
         <td><%= review.user.email %></td>
-        <td><%= link_to 'Show', root_path %></td>
-        <td><%= link_to 'Edit', root_path%></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <tr><br></tr>
       <tbody>
-      </table>
-    <% end %>
-
-
-<br>
-<%= link_to 'New review', new_review_path %>
+      </table><hr>
+      <% end %>
+      <%= paginate @reviews %>
+      <br>
+    </div>
+  </div>
+</div>

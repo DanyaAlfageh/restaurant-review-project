@@ -1,11 +1,16 @@
 class ReviewsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :set_resturant
+    before_action :authenticate_user!, except: [:index]
+    before_action :set_resturant, except: [:index]
     before_action :set_review, only: [:show, :edit, :update]
     before_action :set_review_dest, only: [:destroy]
+
   def index
-    @reviews = current_user.reviews
-  end
+    if params[:user_id]
+      @reviews = Review.where(user_id: params[:user_id]).order(created_at: :asc).page(params[:page]).per(2)
+    else 
+      @reviews = Review.all
+    end
+  end 
 
   def show
   end

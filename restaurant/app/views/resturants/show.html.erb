@@ -25,12 +25,12 @@
                             <strong>Body:</strong>
                             <%= review.body %>
                         </p>
-                            <%= review.user.email.partition('@').first %>
+                            <%= link_to "#{review.user.email.partition('@').first}", reviews_path(user_id: review.user.id)%>
                         </p>
                         <% if current_user == review.user%>
                         <span class="badge badge-secondary"><%= link_to 'EDIT', edit_resturant_review_path(review.resturant, review), :class =>"white"%></span>
                         <% end %>
-                        <% if current_user == review.user || current_user.admin? %>
+                        <% if current_user == review.user || current_user.try(:admin?) %>
                             <span class="badge badge-secondary"><%= link_to 'Destroy this review!', resturant_review_path(review.resturant, review), method: :delete, :class =>"white"%></span> 
                         <% end %>
                         <br><br><hr>
@@ -53,7 +53,7 @@
                     <% @resturant.images.each do |i| %>
                         <div class="image-box">
                             <%= image_tag i.image , class: 'imagesize'%>
-                            <% if current_user == i.user || current_user.admin? %>
+                            <% if current_user == i.user || current_user.try(:admin?) %>
                                 <span class="text btn btn-danger"><%= link_to 'Delete', resturant_image_path(i.resturant, i), method: :delete, :class =>"white"%></span>
                             <% else %>
                                 <span class="text btn btn-secondary">

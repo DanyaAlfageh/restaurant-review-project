@@ -2,13 +2,11 @@
     <div class='row'>
         <div class='col-lg-11'>
             <% @resturants.each do |resturant| %>
-            <h2>
-                <%= resturant.name %></h2>
+                <h2><%= resturant.name %></h2>
                 <br>
-                <p><%= link_to 'Show', resturant %>
+                <p><%= link_to 'Show', resturant %></p>
                 <hr>
-            </p>
-            <br>
+                <br>
             <% end %>
             <%= paginate @resturants %>
             <br><br><br>

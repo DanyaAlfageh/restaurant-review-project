@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'resturants#index'
 
   devise_for :users
+  
+  resources :reviews, only: [:index, :show]
 
   resources :resturants, only: [:index, :show] do
     resources :reviews, except: [:index, :show] 
