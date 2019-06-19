@@ -3,12 +3,13 @@
         <div class='col-md-7'><br>
             <%= link_to 'Back', resturants_path%><br><br>
             <h2>
-              <%= @resturant.name %>
+              <%= @resturant.name %> 
             </h2>
             <br>
             <p><%= @resturant.description %>
             </p><br><hr><br><br>
-            <h4>Reviews</h4><br>
+            <h4>Reviews <span class="light-grey-text"> <%= @resturant.reviews.count %> reviews </span>
+            </h4><br>
                 <% if @resturant.reviews.blank? %>
                     <h3>No reviews just yet, would you like to add the first!</h3><br>
                     <%= link_to "Write Review", new_resturant_review_path(@resturant), class: "btn btn-danger" %>
@@ -42,7 +43,8 @@
         </div>
         <div class='col-md-5'>
             <div class='separate'><br><br><br>
-                <h2>Images</h2><br>
+                <h2>Images
+                <span class="light-grey-text"> <%= @resturant.images.count %> images </span></h2>
                 <% if @resturant.images.blank? %>
                 <div class="image-box">
                     <div class="grey-box"></div>

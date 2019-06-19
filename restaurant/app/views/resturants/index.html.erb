@@ -2,8 +2,9 @@
     <div class='row'>
         <div class='col-lg-11'>
             <% @resturants.each do |resturant| %>
-                <h2><%= resturant.name %></h2>
-                <br>
+                <p class="bolder"><%= resturant.name %>
+                <span class="light-grey-text"> <%= resturant.reviews.count %> reviews </span>
+                </p>
                 <p><%= link_to 'Show', resturant %></p>
                 <hr>
                 <br>

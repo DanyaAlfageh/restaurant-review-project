@@ -168,6 +168,33 @@ header a, header a:hover{
   padding-right: 20px;
 }
 
+.light-grey-text{
+
+  font-size: 15px;
+  color: lightslategrey;
+
+}
+
+.bolder{
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.image-size{
+  display: inline;
+  width: 400px;
+  height: 400px;
+  padding:30px;
+
+}
+
+.image-size-card{
+  display: inline;
+  width: 400px;
+  height: 400px;
+
+}
+
 // @media (max-width: 500px) {
 //   .header{
 //     padding: 100%;
