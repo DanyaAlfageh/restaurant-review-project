@@ -37,6 +37,17 @@ The most challenging and rewarding part were two requirements :
 ### Favorite parts
 
 Definetly the using amazon buckets then building the relations 
+#### Amazon code 
+
+```
+amazon:
+  service: S3
+  access_key_id: <%= ENV['S3_KEY'] %>
+  secret_access_key: <%= ENV['S3_SECRET'] %>
+  region: <%= ENV['S3_REGION'] %>
+  bucket: resturant-images
+  
+```
 
 ### What to add next ?
 
@@ -48,3 +59,11 @@ The below is a screen-shot of what I think is the most beautiful webpage in my s
 
 ![Image of Yaktocat](https://i.ibb.co/mGRXpC4/Screenshot-2019-06-19-Restaurant.png)
 
+
+### Resources 
+
+The most helpful links in my application are listed below:
+
+* [ 12 Web Apps in 12 Weeks ](.https://www.youtube.com/playlist?list=PL23ZvcdS3XPLNdRYB_QyomQsShx59tpc-)
+* [ Build Instagram by Ruby on Rails ](https://medium.com/@luanotes/build-instagram-by-ruby-on-rails-part-1-fef7837ee399)
+* [ Rails Casts ](http://railscasts.com/)
