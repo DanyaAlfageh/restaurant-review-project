@@ -64,6 +64,6 @@ The below is a screen-shot of what I think is the most beautiful webpage in my s
 
 The most helpful links in my application are listed below:
 
-* [ 12 Web Apps in 12 Weeks ](.https://www.youtube.com/playlist?list=PL23ZvcdS3XPLNdRYB_QyomQsShx59tpc-)
+* [ 12 Web Apps in 12 Weeks ](https://www.youtube.com/playlist?list=PL23ZvcdS3XPLNdRYB_QyomQsShx59tpc-)
 * [ Build Instagram by Ruby on Rails ](https://medium.com/@luanotes/build-instagram-by-ruby-on-rails-part-1-fef7837ee399)
 * [ Rails Casts ](http://railscasts.com/)
